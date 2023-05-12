@@ -85,10 +85,12 @@ def generate_blueprint_sprite(infilename, outfilename):
 buildings = listdir("buildings")
 
 for buildingId in buildings:
-    if not ".png" in buildingId:
+    if ".png" not in buildingId:
         continue
     if "hub" in buildingId:
         continue
     if "wire-" in buildingId:
         continue
-    generate_blueprint_sprite("buildings/" + buildingId + "", "blueprints/" + buildingId + "")
+    generate_blueprint_sprite(
+        f"buildings/{buildingId}", f"blueprints/{buildingId}"
+    )
